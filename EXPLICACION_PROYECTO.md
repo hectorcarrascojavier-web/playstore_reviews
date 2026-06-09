@@ -33,4 +33,4 @@ Modelo: AppReview
 - Conexión con dataset real de Kaggle
 
 ## Integrantes
-- Javier Hector Carrasco
+- Javier Hector Carrasco / ALvis Saldaña / Raul del Cid
