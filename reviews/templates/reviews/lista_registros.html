@@ -1,0 +1,49 @@
+{% extends "reviews/base.html" %}
+
+{% block title %}Lista de Reseñas{% endblock %}
+
+{% block content %}
+<div class="bg-white rounded-lg shadow-md p-6 mb-6">
+    <h2 class="text-2xl font-bold text-playstore-green mb-2"> Reseñas de Apps</h2>
+    <p class="text-gray-600">Listado de todas las reseñas guardadas en la base de datos</p>
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {% for registro in registros %}
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+        <div class="bg-playstore-green px-4 py-2">
+            <h3 class="text-white font-bold text-lg">{{ registro.nombre_app }}</h3>
+        </div>
+        <div class="p-4">
+            <div class="flex justify-between items-center mb-2">
+                <span class="text-sm text-gray-500">{{ registro.categoria }}</span>
+                <span class="text-yellow-500 font-bold">{{ registro.calificacion }} ⭐</span>
+            </div>
+            <p class="text-gray-700 text-sm mb-2">
+                <strong>Descargas:</strong> {{ registro.descargas }}
+            </p>
+            <p class="text-gray-600 text-sm mb-3 italic">
+                "{{ registro.reseña }}"
+            </p>
+            <p class="text-xs text-gray-400">
+                 {{ registro.fecha_registro }}
+            </p>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-span-full text-center py-8">
+        <p class="text-gray-500">No hay reseñas guardadas todavía.</p>
+        <a href="/admin/reviews/appreview/add/" class="text-playstore-green hover:underline">
+            Agrega una desde el panel administrativo →
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="mt-6 text-center">
+    <a href="{% url 'inicio' %}" 
+       class="text-playstore-blue hover:underline">
+        ← Volver al inicio
+    </a>
+</div>
+{% endblock %}

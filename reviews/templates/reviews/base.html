@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}PlayStore Reviews{% endblock %}</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        playstore: {
+                            green: '#0f9d58',
+                            blue: '#4285f4',
+                            dark: '#202124'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <nav class="bg-playstore-green shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div>
+                <h1 class="text-white text-xl font-bold">📱 PlayStore Reviews</h1>
+                <p class="text-white text-sm opacity-90">Reseñas de aplicaciones Android</p>
+            </div>
+            <div class="space-x-4">
+                <a href="{% url 'inicio' %}" class="text-white hover:text-gray-200">Inicio</a>
+                <a href="{% url 'lista_registros' %}" class="text-white hover:text-gray-200">Reseñas</a>
+                <a href="/admin/" class="text-white hover:text-gray-200">Admin</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="bg-playstore-dark text-white text-center py-4 mt-8">
+        <p>Proyecto Final - Google Play Store Apps | Django + Tailwind CSS</p>
+    </footer>
+</body>
+</html>

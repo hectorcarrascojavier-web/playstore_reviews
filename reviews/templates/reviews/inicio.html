@@ -1,0 +1,45 @@
+{% extends "reviews/base.html" %}
+
+{% block title %}Inicio - PlayStore Reviews{% endblock %}
+
+{% block content %}
+<div class="bg-white rounded-lg shadow-md p-6 mb-6">
+    <h2 class="text-3xl font-bold text-playstore-green mb-4">📱 PlayStore Reviews</h2>
+    <p class="text-gray-600 mb-4">
+        Plataforma para registrar y visualizar reseñas de aplicaciones Android,
+        similar a la funcionalidad de Google Play Store.
+    </p>
+</div>
+
+<div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold text-playstore-blue mb-3">Problema que resuelve</h3>
+        <p class="text-gray-600">
+            Permite a usuarios registrar y visualizar reseñas de apps Android, 
+             facilitando con estos datos la predicción de resultados en base a estadísticas clave.
+        </p>
+    </div>
+    
+    <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold text-playstore-blue mb-3">Dataset utilizado</h3>
+        <p class="text-gray-600">
+            Google Play Store Apps (Kaggle) - 2.3 millones de aplicaciones Android
+            con información de calificaciones, descargas, categorías y reseñas.
+        </p>
+    </div>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-6 mt-6">
+    <h3 class="text-xl font-bold text-playstore-blue mb-3">Integrantes</h3>
+    <ul class="list-disc list-inside text-gray-600">
+        <li>Javier Hector Carrasco - Alvis Saldaña - Raul del Cid</li>
+    </ul>
+</div>
+
+<div class="mt-6 text-center">
+    <a href="{% url 'lista_registros' %}" 
+       class="bg-playstore-green text-white px-6 py-3 rounded-lg hover:bg-green-700 transition">
+        Ver Reseñas Registradas →
+    </a>
+</div>
+{% endblock %}
